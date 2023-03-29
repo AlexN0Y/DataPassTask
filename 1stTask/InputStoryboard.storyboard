@@ -8,20 +8,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--Second Screen View Controller-->
+        <scene sceneID="huC-x5-VrD">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController storyboardIdentifier="SecondScreenVC" id="2PN-SN-isD" customClass="SecondScreenViewController" customModule="_stTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzn-vb-YPr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jun-Nv-VVa">
+                                <rect key="frame" x="100" y="136" width="192" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e0-04-4Cs">
+                                <rect key="frame" x="166" y="698" width="61" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped" destination="2PN-SN-isD" eventType="touchUpInside" id="lJ0-dJ-cGF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-vF-jDN">
+                                <rect key="frame" x="100" y="178" width="192" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-YI-kmr">
+                                <rect key="frame" x="100" y="220" width="192" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ozt-M3-Tn3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="Zo3-YI-kmr" secondAttribute="centerX" id="8lw-HN-nM1"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="Zo3-YI-kmr" secondAttribute="leading" id="AJ8-gI-vvB"/>
+                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="zzn-vb-YPr" secondAttribute="centerX" id="B04-Gs-ilM"/>
+                            <constraint firstItem="Zo3-YI-kmr" firstAttribute="top" secondItem="hoF-vF-jDN" secondAttribute="bottom" constant="8" id="KgP-qN-2Ar"/>
+                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="jun-Nv-VVa" secondAttribute="centerX" id="RZf-i4-FIT"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="hoF-vF-jDN" secondAttribute="leading" id="Ypy-ko-ajq"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="top" secondItem="ozt-M3-Tn3" secondAttribute="top" constant="33" id="cO7-tE-Kb5"/>
+                            <constraint firstItem="ozt-M3-Tn3" firstAttribute="bottom" secondItem="5e0-04-4Cs" secondAttribute="bottom" constant="85" id="caI-XK-fAm"/>
+                            <constraint firstItem="hoF-vF-jDN" firstAttribute="top" secondItem="jun-Nv-VVa" secondAttribute="bottom" constant="8" id="dVT-Cv-ohN"/>
+                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="hoF-vF-jDN" secondAttribute="centerX" id="eSl-HA-Tjb"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="ozt-M3-Tn3" secondAttribute="leading" constant="100" id="rro-YC-WDJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="w1g-C1-YOg"/>
+                    <connections>
+                        <outlet property="closureTextField" destination="hoF-vF-jDN" id="Ylc-VK-r2d"/>
+                        <outlet property="delegateTextField" destination="jun-Nv-VVa" id="8d4-x1-nL4"/>
+                        <outlet property="notificationTextField" destination="Zo3-YI-kmr" id="OzP-8l-Xsx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0i-8P-FB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="-2"/>
+            <point key="canvasLocation" x="1022" y="-2"/>
         </scene>
     </scenes>
     <resources>
