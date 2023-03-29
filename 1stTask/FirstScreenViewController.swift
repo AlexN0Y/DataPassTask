@@ -22,16 +22,17 @@ class FirstScreenViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(onTextEntered), name: Notification.Name("TextEntered"), object: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSecondScreenVC" {
-            if let destinationVC = segue.destination as? SecondScreenViewController {
-                destinationVC.delegate = self
-                destinationVC.onSave = { [weak self] closureText in
-                    self?.closureLabel.text = closureText
-                }
-            }
+    @IBAction func nextButtonTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! SecondScreenViewController
+        secondViewController.delegate = self
+        secondViewController.onSave = { [weak self] closureText in
+            self?.closureLabel.text = closureText
         }
+        self.present(secondViewController, animated: true, completion: nil)
+
     }
+    
     
     @objc func onTextEntered(_ notification: Notification) {
         guard let text = notification.userInfo?["text"] as? String else { return }

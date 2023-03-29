@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF369F8229D502EF0099BB82 /* InputStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF369F8129D502EF0099BB82 /* InputStoryboard.storyboard */; };
 		DF9F965829D3026900CF9F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F965729D3026900CF9F48 /* AppDelegate.swift */; };
 		DF9F965A29D3026900CF9F48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F965929D3026900CF9F48 /* SceneDelegate.swift */; };
 		DF9F965C29D3026900CF9F48 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F965B29D3026900CF9F48 /* FirstScreenViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF369F8129D502EF0099BB82 /* InputStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputStoryboard.storyboard; sourceTree = "<group>"; };
 		DF9F965429D3026900CF9F48 /* 1stTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1stTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9F965729D3026900CF9F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF9F965929D3026900CF9F48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,11 +60,12 @@
 		DF9F965629D3026900CF9F48 /* 1stTask */ = {
 			isa = PBXGroup;
 			children = (
-				DFEE616829D362EE005547C7 /* SecondScreenViewController.swift */,
 				DF9F965729D3026900CF9F48 /* AppDelegate.swift */,
 				DF9F965929D3026900CF9F48 /* SceneDelegate.swift */,
 				DF9F965B29D3026900CF9F48 /* FirstScreenViewController.swift */,
+				DFEE616829D362EE005547C7 /* SecondScreenViewController.swift */,
 				DF9F965D29D3026900CF9F48 /* Main.storyboard */,
+				DF369F8129D502EF0099BB82 /* InputStoryboard.storyboard */,
 				DF9F966029D3026900CF9F48 /* Assets.xcassets */,
 				DF9F966229D3026900CF9F48 /* LaunchScreen.storyboard */,
 				DF9F966529D3026900CF9F48 /* Info.plist */,
@@ -130,6 +133,7 @@
 			files = (
 				DF9F966429D3026900CF9F48 /* LaunchScreen.storyboard in Resources */,
 				DF9F966129D3026900CF9F48 /* Assets.xcassets in Resources */,
+				DF369F8229D502EF0099BB82 /* InputStoryboard.storyboard in Resources */,
 				DF9F965F29D3026900CF9F48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

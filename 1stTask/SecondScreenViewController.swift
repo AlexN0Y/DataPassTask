@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TextFieldDelegate {
+protocol TextFieldDelegate: AnyObject {
     func didEnterText(_ text: String)
 }
 
@@ -16,7 +16,7 @@ class SecondScreenViewController: UIViewController {
     @IBOutlet private weak var closureTextField: UITextField!
     @IBOutlet private weak var notificationTextField: UITextField!
     
-    var delegate: TextFieldDelegate?
+    weak var delegate: TextFieldDelegate?
     var onSave: ((String?) -> Void)?
     
     override func viewDidLoad() {
@@ -33,6 +33,11 @@ class SecondScreenViewController: UIViewController {
         if let text = notificationTextField.text {
             NotificationCenter.default.post(name: Notification.Name("TextEntered"), object: nil, userInfo: ["text": text])
         }
+        dismissViewController()
+    }
+    
+    func dismissViewController() {
+        dismiss(animated: true, completion: nil)
     }
     
 }
