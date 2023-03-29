@@ -29,8 +29,8 @@ class FirstScreenViewController: UIViewController {
         secondViewController.onSave = { [weak self] closureText in
             self?.closureLabel.text = closureText
         }
+        
         self.present(secondViewController, animated: true, completion: nil)
-
     }
     
     
