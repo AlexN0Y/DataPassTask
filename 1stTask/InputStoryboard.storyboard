@@ -21,14 +21,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e0-04-4Cs">
-                                <rect key="frame" x="166" y="698" width="61" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonTapped" destination="2PN-SN-isD" eventType="touchUpInside" id="lJ0-dJ-cGF"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-vF-jDN">
                                 <rect key="frame" x="100" y="178" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,17 +35,15 @@
                         <viewLayoutGuide key="safeArea" id="ozt-M3-Tn3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="Zo3-YI-kmr" secondAttribute="centerX" id="8lw-HN-nM1"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="Zo3-YI-kmr" secondAttribute="leading" id="AJ8-gI-vvB"/>
-                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="zzn-vb-YPr" secondAttribute="centerX" id="B04-Gs-ilM"/>
-                            <constraint firstItem="Zo3-YI-kmr" firstAttribute="top" secondItem="hoF-vF-jDN" secondAttribute="bottom" constant="8" id="KgP-qN-2Ar"/>
-                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="jun-Nv-VVa" secondAttribute="centerX" id="RZf-i4-FIT"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="hoF-vF-jDN" secondAttribute="leading" id="Ypy-ko-ajq"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="top" secondItem="ozt-M3-Tn3" secondAttribute="top" constant="33" id="cO7-tE-Kb5"/>
-                            <constraint firstItem="ozt-M3-Tn3" firstAttribute="bottom" secondItem="5e0-04-4Cs" secondAttribute="bottom" constant="85" id="caI-XK-fAm"/>
-                            <constraint firstItem="hoF-vF-jDN" firstAttribute="top" secondItem="jun-Nv-VVa" secondAttribute="bottom" constant="8" id="dVT-Cv-ohN"/>
-                            <constraint firstItem="5e0-04-4Cs" firstAttribute="centerX" secondItem="hoF-vF-jDN" secondAttribute="centerX" id="eSl-HA-Tjb"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="ozt-M3-Tn3" secondAttribute="leading" constant="100" id="rro-YC-WDJ"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="ozt-M3-Tn3" secondAttribute="leading" constant="100" id="0JA-Mx-54a"/>
+                            <constraint firstItem="Zo3-YI-kmr" firstAttribute="top" secondItem="hoF-vF-jDN" secondAttribute="bottom" constant="8" id="B1S-4y-sof"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="Zo3-YI-kmr" secondAttribute="leading" id="B4i-NI-B0L"/>
+                            <constraint firstItem="hoF-vF-jDN" firstAttribute="top" secondItem="jun-Nv-VVa" secondAttribute="bottom" constant="8" id="BRp-Xk-kLK"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="trailing" secondItem="hoF-vF-jDN" secondAttribute="trailing" id="KIM-7D-I2t"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="hoF-vF-jDN" secondAttribute="leading" id="T3C-MG-sK7"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="centerX" secondItem="zzn-vb-YPr" secondAttribute="centerX" id="a4F-3r-6EJ"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="top" secondItem="ozt-M3-Tn3" secondAttribute="top" constant="77" id="dH6-Tc-rxb"/>
+                            <constraint firstItem="jun-Nv-VVa" firstAttribute="trailing" secondItem="Zo3-YI-kmr" secondAttribute="trailing" id="f1M-MQ-nhj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w1g-C1-YOg"/>

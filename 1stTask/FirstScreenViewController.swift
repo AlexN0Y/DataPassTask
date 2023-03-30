@@ -23,14 +23,13 @@ class FirstScreenViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped() {
-        let storyboard = UIStoryboard(name: "InputStoryboard", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! SecondScreenViewController
+        let inputStoryboard = UIStoryboard(name: "InputStoryboard", bundle: nil)
+        let secondViewController = inputStoryboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! SecondScreenViewController
         secondViewController.delegate = self
         secondViewController.onSave = { [weak self] closureText in
             self?.closureLabel.text = closureText
         }
-        
-        self.present(secondViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
     
