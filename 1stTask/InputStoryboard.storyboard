@@ -20,16 +20,25 @@
                                 <rect key="frame" x="100" y="136" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="delegateTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="Eqc-FI-mpo"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-vF-jDN">
                                 <rect key="frame" x="100" y="178" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="closureTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="5mb-Bc-gOi"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-YI-kmr">
                                 <rect key="frame" x="100" y="220" width="192" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="notificationTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="8k8-Ss-YGM"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ozt-M3-Tn3"/>

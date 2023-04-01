@@ -22,7 +22,7 @@ class FirstScreenViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(onTextEntered), name: Notification.Name("TextEntered"), object: nil)
     }
     
-    @IBAction func nextButtonTapped() {
+    @IBAction private func nextButtonTapped() {
         let inputStoryboard = UIStoryboard(name: "InputStoryboard", bundle: nil)
         let secondViewController = inputStoryboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! SecondScreenViewController
         secondViewController.delegate = self
@@ -33,7 +33,7 @@ class FirstScreenViewController: UIViewController {
     }
     
     
-    @objc func onTextEntered(_ notification: Notification) {
+    @objc private func onTextEntered(_ notification: Notification) {
         guard let text = notification.userInfo?["text"] as? String else { return }
         notificationLabel.text = text
     }

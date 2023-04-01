@@ -23,14 +23,19 @@ class SecondScreenViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    @IBAction private func delegateTextFieldEdited() {
         if let text = delegateTextField.text {
             delegate?.didEnterText(text)
         }
+    }
+    
+    @IBAction private func closureTextFieldEdited() {
         if let text = closureTextField.text {
             onSave?(text)
         }
+    }
+    
+    @IBAction private func notificationTextFieldEdited() {
         if let text = notificationTextField.text {
             NotificationCenter.default.post(name: Notification.Name("TextEntered"), object: nil, userInfo: ["text": text])
         }
