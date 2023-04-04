@@ -8,51 +8,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second Screen View Controller-->
+        <!--Input Screen View Controller-->
         <scene sceneID="huC-x5-VrD">
             <objects>
-                <viewController storyboardIdentifier="SecondScreenVC" id="2PN-SN-isD" customClass="SecondScreenViewController" customModule="_stTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondScreenVC" id="2PN-SN-isD" customClass="InputScreenViewController" customModule="_stTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zzn-vb-YPr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jun-Nv-VVa">
-                                <rect key="frame" x="100" y="136" width="192" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="delegateTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="Eqc-FI-mpo"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-vF-jDN">
-                                <rect key="frame" x="100" y="178" width="192" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="closureTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="5mb-Bc-gOi"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-YI-kmr">
-                                <rect key="frame" x="100" y="220" width="192" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="notificationTextFieldEdited" destination="2PN-SN-isD" eventType="editingDidEnd" id="8k8-Ss-YGM"/>
-                                </connections>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="lQU-hs-rIw">
+                                <rect key="frame" x="60" y="84" width="273" height="152"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jun-Nv-VVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-vF-jDN">
+                                        <rect key="frame" x="0.0" y="59" width="273" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-YI-kmr">
+                                        <rect key="frame" x="0.0" y="118" width="273" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ozt-M3-Tn3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="ozt-M3-Tn3" secondAttribute="leading" constant="100" id="0JA-Mx-54a"/>
-                            <constraint firstItem="Zo3-YI-kmr" firstAttribute="top" secondItem="hoF-vF-jDN" secondAttribute="bottom" constant="8" id="B1S-4y-sof"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="Zo3-YI-kmr" secondAttribute="leading" id="B4i-NI-B0L"/>
-                            <constraint firstItem="hoF-vF-jDN" firstAttribute="top" secondItem="jun-Nv-VVa" secondAttribute="bottom" constant="8" id="BRp-Xk-kLK"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="trailing" secondItem="hoF-vF-jDN" secondAttribute="trailing" id="KIM-7D-I2t"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="leading" secondItem="hoF-vF-jDN" secondAttribute="leading" id="T3C-MG-sK7"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="centerX" secondItem="zzn-vb-YPr" secondAttribute="centerX" id="a4F-3r-6EJ"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="top" secondItem="ozt-M3-Tn3" secondAttribute="top" constant="77" id="dH6-Tc-rxb"/>
-                            <constraint firstItem="jun-Nv-VVa" firstAttribute="trailing" secondItem="Zo3-YI-kmr" secondAttribute="trailing" id="f1M-MQ-nhj"/>
+                            <constraint firstItem="ozt-M3-Tn3" firstAttribute="trailing" secondItem="lQU-hs-rIw" secondAttribute="trailing" constant="60" id="XB3-ba-tHb"/>
+                            <constraint firstItem="lQU-hs-rIw" firstAttribute="top" secondItem="ozt-M3-Tn3" secondAttribute="top" constant="25" id="lVc-1k-aZ6"/>
+                            <constraint firstItem="lQU-hs-rIw" firstAttribute="leading" secondItem="ozt-M3-Tn3" secondAttribute="leading" constant="60" id="nfQ-QJ-nMX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w1g-C1-YOg"/>
@@ -64,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0i-8P-FB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="-2"/>
+            <point key="canvasLocation" x="1020.6106870229007" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

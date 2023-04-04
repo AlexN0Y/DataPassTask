@@ -8,7 +8,7 @@
 import UIKit
 
 
-class FirstScreenViewController: UIViewController {
+class ResultScreenViewController: UIViewController {
     
     @IBOutlet private weak var delegateLabel: UILabel!
     @IBOutlet private weak var closureLabel: UILabel!
@@ -24,7 +24,7 @@ class FirstScreenViewController: UIViewController {
     
     @IBAction private func nextButtonTapped() {
         let inputStoryboard = UIStoryboard(name: "InputStoryboard", bundle: nil)
-        let secondViewController = inputStoryboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! SecondScreenViewController
+        let secondViewController = inputStoryboard.instantiateViewController(withIdentifier: "SecondScreenVC") as! InputScreenViewController
         secondViewController.delegate = self
         secondViewController.onSave = { [weak self] closureText in
             self?.closureLabel.text = closureText
@@ -43,7 +43,7 @@ class FirstScreenViewController: UIViewController {
     }
 }
 
-extension FirstScreenViewController: TextFieldDelegate {
+extension ResultScreenViewController: TextFieldDelegate {
     func didEnterText(_ text: String) {
         delegateLabel.text = text
     }

@@ -11,7 +11,13 @@ protocol TextFieldDelegate: AnyObject {
     func didEnterText(_ text: String)
 }
 
-class SecondScreenViewController: UIViewController {
+enum TextTag: Int {
+    case delegate = 1
+    case closure = 2
+    case notification = 3
+}
+
+class InputScreenViewController: UIViewController {
     @IBOutlet private weak var delegateTextField: UITextField!
     @IBOutlet private weak var closureTextField: UITextField!
     @IBOutlet private weak var notificationTextField: UITextField!
@@ -21,6 +27,12 @@ class SecondScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegateTextField.delegate = self
+        delegateTextField.tag = 1
+        closureTextField.delegate = self
+        closureTextField.tag = 2
+        notificationTextField.delegate = self
+        notificationTextField.tag = 3
     }
     
     @IBAction private func delegateTextFieldEdited() {
@@ -41,4 +53,23 @@ class SecondScreenViewController: UIViewController {
         }
     }
     
+}
+
+extension InputScreenViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else {
+            return
+        }
+        switch TextTag(rawValue: textField.tag) {
+        case .delegate:
+            delegate?.didEnterText(text)
+        case .closure:
+            onSave?(text)
+        case .notification:
+            NotificationCenter.default.post(name: Notification.Name("TextEntered"), object: nil, userInfo: ["text": text])
+        case .none:
+            break
+        }
+        
+    }
 }
