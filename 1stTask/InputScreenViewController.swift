@@ -12,18 +12,27 @@ protocol TextFieldDelegate: AnyObject {
 }
 
 class InputScreenViewController: UIViewController {
-    @IBOutlet private weak var delegateTextField: UITextField!
-    @IBOutlet private weak var closureTextField: UITextField!
-    @IBOutlet private weak var notificationTextField: UITextField!
+    @IBOutlet private weak var delegateTextField: UITextField! {
+        didSet {
+            delegateTextField.delegate = self
+        }
+    }
+    @IBOutlet private weak var closureTextField: UITextField! {
+        didSet {
+            closureTextField.delegate = self
+        }
+    }
+    @IBOutlet private weak var notificationTextField: UITextField! {
+        didSet {
+            notificationTextField.delegate = self
+        }
+    }
     
     weak var delegate: TextFieldDelegate?
     var onSave: ((String?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegateTextField.delegate = self
-        closureTextField.delegate = self
-        notificationTextField.delegate = self
     }
     
     @IBAction private func delegateTextFieldEdited() {
@@ -56,7 +65,7 @@ extension InputScreenViewController: UITextFieldDelegate {
             delegate?.didEnterText(text)
         } else if textField.isEqual(closureTextField) {
             onSave?(text)
-        } else {
+        } else if textField.isEqual(notificationTextField) {
             NotificationCenter.default.post(name: Notification.Name("TextEntered"), object: nil, userInfo: ["text": text])
         }
     }

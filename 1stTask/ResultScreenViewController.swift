@@ -10,15 +10,24 @@ import UIKit
 
 class ResultScreenViewController: UIViewController {
     
-    @IBOutlet private weak var delegateLabel: UILabel!
-    @IBOutlet private weak var closureLabel: UILabel!
-    @IBOutlet private weak var notificationLabel: UILabel!
+    @IBOutlet private weak var delegateLabel: UILabel! {
+        didSet {
+            delegateLabel.text = "Waiting for change"
+        }
+    }
+    @IBOutlet private weak var closureLabel: UILabel! {
+        didSet {
+            closureLabel.text = "Waiting for change"
+        }
+    }
+    @IBOutlet private weak var notificationLabel: UILabel! {
+        didSet {
+            notificationLabel.text = "Waiting for change"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegateLabel.text = "Waiting for change"
-        closureLabel.text = "Waiting for change"
-        notificationLabel.text = "Waiting for change"
         NotificationCenter.default.addObserver(self, selector: #selector(onTextEntered), name: Notification.Name("TextEntered"), object: nil)
     }
     
@@ -32,15 +41,11 @@ class ResultScreenViewController: UIViewController {
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
-    
     @objc private func onTextEntered(_ notification: Notification) {
         guard let text = notification.userInfo?["text"] as? String else { return }
         notificationLabel.text = text
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 }
 
 extension ResultScreenViewController: TextFieldDelegate {
